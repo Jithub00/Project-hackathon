@@ -1,0 +1,227 @@
+[
+  {
+    "file": "abstract-01.jpg",
+    "title": "Abstract 01 - diagonal light streak",
+    "subject": "abstract",
+    "sourceUrl": null,
+    "author": "Photo Shoot demo build script",
+    "license": "Original work (generated for this project)",
+    "licenseUrl": null
+  },
+  {
+    "file": "abstract-02.jpg",
+    "title": "Abstract 02 - horizon lines and red sun",
+    "subject": "abstract",
+    "sourceUrl": null,
+    "author": "Photo Shoot demo build script",
+    "license": "Original work (generated for this project)",
+    "licenseUrl": null
+  },
+  {
+    "file": "abstract-03.jpg",
+    "title": "Abstract 03 - vertical light columns",
+    "subject": "abstract",
+    "sourceUrl": null,
+    "author": "Photo Shoot demo build script",
+    "license": "Original work (generated for this project)",
+    "licenseUrl": null
+  },
+  {
+    "file": "abstract-04.jpg",
+    "title": "Abstract 04 - bokeh field",
+    "subject": "abstract",
+    "sourceUrl": null,
+    "author": "Photo Shoot demo build script",
+    "license": "Original work (generated for this project)",
+    "licenseUrl": null
+  },
+  {
+    "file": "abstract-05.jpg",
+    "title": "Abstract 05 - concentric arcs",
+    "subject": "abstract",
+    "sourceUrl": null,
+    "author": "Photo Shoot demo build script",
+    "license": "Original work (generated for this project)",
+    "licenseUrl": null
+  },
+  {
+    "file": "abstract-06.jpg",
+    "title": "Abstract 06 - perspective grid",
+    "subject": "abstract",
+    "sourceUrl": null,
+    "author": "Photo Shoot demo build script",
+    "license": "Original work (generated for this project)",
+    "licenseUrl": null
+  },
+  {
+    "file": "abstract-07.jpg",
+    "title": "Abstract 07 - long-exposure light trails",
+    "subject": "abstract",
+    "sourceUrl": null,
+    "author": "Photo Shoot demo build script",
+    "license": "Original work (generated for this project)",
+    "licenseUrl": null
+  },
+  {
+    "file": "abstract-08.jpg",
+    "title": "Abstract 08 - red light bar",
+    "subject": "abstract",
+    "sourceUrl": null,
+    "author": "Photo Shoot demo build script",
+    "license": "Original work (generated for this project)",
+    "licenseUrl": null
+  },
+  {
+    "file": "hero-los-angeles.jpg",
+    "title": "Observatory dusk",
+    "subject": "architecture",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Observatory_dusk.jpg",
+    "author": "Mfield, Matthew Field, http://www.photography.mattfield.com",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "file": "la-01-downtown-la-at-night.jpg",
+    "title": "Downtown Los Angeles at Night",
+    "subject": "skyline",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Downtown_Los_Angeles_at_Night.jpg",
+    "author": "Camiloarenivar",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "file": "la-02-freeway-skyline-night.jpg",
+    "title": "Nightime skyline view of Los Angeles, California, looking north over the U.S. 101 (Hollywood) Freeway LCCN2013631697",
+    "subject": "skyline",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nightime_skyline_view_of_Los_Angeles,_California,_looking_north_over_the_U.S._101_(Hollywood)_Freeway_LCCN2013631697.tif",
+    "author": "Carol M. Highsmith",
+    "license": "Public domain",
+    "licenseUrl": null
+  },
+  {
+    "file": "la-03-echo-park-lake-skyline.jpg",
+    "title": "20190616154621!Echo Park Lake with Downtown Los Angeles Skyline",
+    "subject": "skyline",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20190616154621!Echo_Park_Lake_with_Downtown_Los_Angeles_Skyline.jpg",
+    "author": "Adoramassey",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "file": "la-04-city-hall-belgian-colours.jpg",
+    "title": "Los Angeles City Hall illuminate in Belgian colours",
+    "subject": "skyline",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Los_Angeles_City_Hall_illuminate_in_Belgian_colours.jpg",
+    "author": "Office of Los Angeles Mayor",
+    "license": "Public domain",
+    "licenseUrl": null
+  },
+  {
+    "file": "la-05-griffith-observatory-dusk.jpg",
+    "title": "Observatory dusk",
+    "subject": "architecture",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Observatory_dusk.jpg",
+    "author": "Mfield, Matthew Field, http://www.photography.mattfield.com",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "file": "la-06-griffith-observatory-twilight.jpg",
+    "title": "Griffith Observatory 2008 (Griffith park)",
+    "subject": "architecture",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Griffith_Observatory_2008_(Griffith_park).jpg",
+    "author": "sam garza",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "file": "la-07-disney-concert-hall-steel.jpg",
+    "title": "Walt Disney Concert Hall exterior 02",
+    "subject": "architecture",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Walt_Disney_Concert_Hall_exterior_02.jpg",
+    "author": "Leviclancy",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  {
+    "file": "la-08-capitol-records-sunset.jpg",
+    "title": "Capitol Records sunset",
+    "subject": "architecture",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Capitol_Records_sunset.jpg",
+    "author": "Downtowngal",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "file": "la-09-getty-center-sunset.jpg",
+    "title": "Los Angeles - Getty Center - Sunset GR",
+    "subject": "architecture",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Los_Angeles_-_Getty_Center_-_Sunset_GR.JPG",
+    "author": "Remi Mathis",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "file": "la-10-getty-center-skyline-haze.jpg",
+    "title": "Los Angeles from the Getty Center (5465084241)",
+    "subject": "skyline",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Los_Angeles_from_the_Getty_Center_(5465084241).jpg",
+    "author": "KimonBerlin",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "file": "la-11-watts-towers.jpg",
+    "title": "Watts Towers in Los Angeles 02",
+    "subject": "architecture",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Watts_Towers_in_Los_Angeles_02.jpg",
+    "author": "Levi Clancy",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "file": "la-12-angels-flight.jpg",
+    "title": "Los Angeles (California, USA), South Olive Street, Angel's Flight -- 2012 -- 4797",
+    "subject": "object",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Los_Angeles_(California,_USA),_South_Olive_Street,_Angel%27s_Flight_--_2012_--_4797.jpg",
+    "author": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "file": "la-13-hollywood-sign-overlook.jpg",
+    "title": "View from behind Hollywood Sign overlooking LA",
+    "subject": "landscape",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_from_behind_Hollywood_Sign_overlooking_LA.jpg",
+    "author": "Michael E. Arth",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "file": "la-14-santa-monica-pier-sunset.jpg",
+    "title": "Santa Monica Pier in Los Angeles",
+    "subject": "landscape",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Santa_Monica_Pier_in_Los_Angeles.jpg",
+    "author": "GillyBerlin",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "file": "la-15-palm-trees-sunset.jpg",
+    "title": "Venice Beach palm trees at sunset (Unsplash)",
+    "subject": "landscape",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Venice_Beach_palm_trees_at_sunset_(Unsplash).jpg",
+    "author": "Stuart Guest-Smith sguestsmith",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  {
+    "file": "clothing-launch-tee.jpg",
+    "title": "Black t-shirt flat-lay with a white chest print (generated for this project)",
+    "subject": "product",
+    "sourceUrl": null,
+    "author": "Photo Shoot demo build",
+    "license": "Original work (generated for this project)",
+    "licenseUrl": null
+  }
+]

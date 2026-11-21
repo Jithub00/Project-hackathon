@@ -1,0 +1,279 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/archivo";
+@import "@fontsource-variable/inter";
+
+/*
+  Photo Shoot design system (see design-system/photo-shoot/MASTER.md).
+  Dark-only, cinematic: pure black canvas, cherry-red accent sampled from the
+  supplied logo (#E12325), crisp white type, hairline white rules.
+*/
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Surfaces */
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #0b0b0c;
+  --card-foreground: #ffffff;
+  --popover: #0e0e10;
+  --popover-foreground: #ffffff;
+  --surface-raised: #141416;
+  --surface-hover: #1c1c1f;
+
+  /* Brand + actions */
+  --primary: #e12325;
+  --primary-foreground: #ffffff;
+  --primary-hover: #c51b1d;
+  --brand-red-text: #ff5557;
+  --secondary: #17171a;
+  --secondary-foreground: #ffffff;
+  --muted: #101012;
+  --muted-foreground: rgb(255 255 255 / 0.72);
+  --subtle-foreground: rgb(255 255 255 / 0.56);
+  --accent: #1d1d21;
+  --accent-foreground: #ffffff;
+  --destructive: #ff4d4f;
+  --destructive-foreground: #ffffff;
+
+  /* Lines and focus */
+  --border: rgb(255 255 255 / 0.14);
+  --border-strong: rgb(255 255 255 / 0.32);
+  --input: rgb(255 255 255 / 0.24);
+  --ring: #ffffff;
+
+  /* Charts (monochrome + red so data stays on-brand) */
+  --chart-1: #e12325;
+  --chart-2: #ffffff;
+  --chart-3: #9a9aa0;
+  --chart-4: #5c5c63;
+  --chart-5: #ff8a8c;
+
+  --radius: 0.375rem;
+
+  /* Motion */
+  --ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1);
+  color-scheme: dark;
+}
+
+/* Type tokens: heavy grotesque for display (matches the logo), Inter for text */
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  --font-display: "Archivo Variable", "Archivo", ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-hover: var(--surface-hover);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-brand-red-text: var(--brand-red-text);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-subtle-foreground: var(--subtle-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    background: var(--background);
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    min-height: 100dvh;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    display: block;
+  }
+
+  ::selection {
+    background: var(--primary);
+    color: #fff;
+  }
+}
+
+@layer components {
+  /* Eyebrow label: small caps line above headings */
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-brand-red-text;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: currentColor;
+  }
+
+  /* Hairline section divider that can carry a single white streak */
+  .hairline {
+    position: relative;
+    height: 1px;
+    background: var(--border);
+    overflow: hidden;
+  }
+  .hairline::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 30%;
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.9), transparent);
+    animation: streak 5.5s var(--ease-cinematic) infinite;
+  }
+
+  .section-pad {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .surface-panel {
+    @apply rounded-lg border border-border bg-card;
+  }
+
+  .lift-card {
+    @apply transition-[border-color,transform,background-color] duration-300 ease-out;
+  }
+  .lift-card:hover {
+    @apply border-border-strong;
+  }
+
+  .photo-frame {
+    @apply relative overflow-hidden rounded-md bg-surface-raised;
+  }
+  .photo-frame img {
+    @apply h-full w-full object-cover transition-transform duration-700 ease-out;
+  }
+  .group:hover .photo-frame img,
+  .photo-frame:hover img {
+    transform: scale(1.035);
+  }
+}
+
+@keyframes streak {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(420%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(420%);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .hairline::after {
+    display: none;
+  }
+}
+
+/* Camera sequence: captions stack in reduced motion and share one grid cell while animating. */
+.cam-captions {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+[data-motion="full"] .cam-captions,
+[data-motion="compact"] .cam-captions {
+  display: grid;
+}
+[data-motion="full"] .cam-caption,
+[data-motion="compact"] .cam-caption {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease;
+}
+[data-motion="full"] .cam-caption[data-active="true"],
+[data-motion="compact"] .cam-caption[data-active="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Touch targets: controls are at least 44px tall on coarse pointers (phones and tablets). */
+@media (pointer: coarse) {
+  [data-slot="carousel-previous"],
+  [data-slot="carousel-next"] {
+    width: 44px;
+    height: 44px;
+  }
+  [data-slot="button"],
+  [role="tab"],
+  [data-slot="select-trigger"],
+  [data-slot="checkbox"],
+  [data-slot="radio-group-item"] {
+    min-height: 44px;
+  }
+  [data-slot="button"][data-size="icon"] {
+    min-width: 44px;
+  }
+}

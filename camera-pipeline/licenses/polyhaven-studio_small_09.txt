@@ -1,0 +1,8 @@
+﻿Poly Haven asset: https://polyhaven.com/a/studio_small_09
+Name: Studio Small 09
+License: CC0 (public domain). Poly Haven's license page states: "Our assets are all licensed as CC0, which is effectively Public Domain." https://polyhaven.com/license
+Source file: https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/studio_small_09_2k.hdr (2K HDR, 6,312,947 bytes)
+Stored as: camera-pipeline/assets/studio_small_09_2k.hdr
+Downloaded: 2026-11-21
+Used for: studio reflections and a little fill light. The HDRI is never shown as the background (camera rays see black; see camera-pipeline/blender/studio.py).
+Attribution: not required under CC0; recorded here for reference.
