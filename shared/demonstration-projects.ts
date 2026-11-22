@@ -29,6 +29,8 @@ export interface DemonstrationProject {
   /** Total project budget in cents, including editing. */
   budgetCents: number;
   compensationIncludes: string;
+  /** Payment terms the role holder acts on: travel, expenses, payment schedule, cancellation. Optional. */
+  paymentTerms?: string[];
   roles: DemonstrationRole[];
   /** Exactly two sentences. */
   overview: string;
@@ -177,13 +179,18 @@ export const DEMONSTRATION_PROJECTS: readonly DemonstrationProject[] = [
     shootEnd: '2026-12-12T17:00:00-08:00',
     budgetCents: 120_000,
     compensationIncludes: 'The total budget includes editing, grading and export for the 90-second video and the three vertical clips. The pre-production call is included.',
+    paymentTerms: [
+      'Travel within Los Angeles is included in the fee. Parking is reimbursed at cost with receipts.',
+      'Payment schedule is to be agreed before booking.',
+      'Cancellations follow the Refund and Cancellation Policy.',
+    ],
     roles: [
       {
         role: 'videographer',
         responsibilities: [
-          'Plan camera positions and moves with the musician before the shoot.',
-          'Operate cameras and lighting for the full performance and for close-ups.',
-          'Edit the 90-second video and three 15-second vertical clips with one consistent grade.',
+          'Before the shoot: plan camera positions and moves with the musician, and agree the shot list against the setlist.',
+          'On the day: operate cameras and lighting for the full performance and for close-ups, and record scratch audio.',
+          'After the shoot: edit the 90-second video and three 15-second vertical clips with one consistent grade, and deliver all four files by December 22, 2026.',
         ],
       },
     ],
@@ -223,7 +230,7 @@ export const DEMONSTRATION_PROJECTS: readonly DemonstrationProject[] = [
       'Availability on December 12, 2026 from noon to 5 p.m., and confirmation that you can deliver by December 22.',
       'Confirmation that you accept the proposed total budget of $1,200, including editing.',
     ],
-    image: { src: '/images/samples/abstract-08.jpg', alt: 'Abstract placeholder of a red light bar on black. No people shown.' },
+    image: { src: '/images/samples/music-neon-waveform.jpg', alt: 'Glowing neon sound-wave tubes in red, pink and cyan on black, with a light haze and bokeh. An abstract placeholder; no people shown.' },
   },
   {
     slug: 'architecture-and-interiors-showcase',

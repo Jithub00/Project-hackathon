@@ -8,9 +8,10 @@ import { AvailabilityCalendar } from '@/components/marketplace/AvailabilityCalen
 import { PortfolioGrid } from '@/components/marketplace/PortfolioGrid';
 import { ReviewList } from '@/components/marketplace/ReviewList';
 import { DemoBadge, EmptyState, ErrorAlert, InitialsAvatar, LoadingBlock, RatingLine } from '@/components/site/ui-bits';
-import { api } from '@/lib/api';
 import { useApp } from '@/lib/app-context';
 import { useApi } from '@/lib/use-api';
+import { fetchCreatorProfile } from '@/lib/creator-source';
+import { SampleNotice } from '@/components/marketplace/SampleNotice';
 import { formatDate } from '@/lib/format';
 import { formatUsd } from '../../shared/money';
 import { SERVICE_KIND_LABEL, WEEKDAY_OPTIONS } from '../../shared/constants';
@@ -47,7 +48,9 @@ function PackageList({ packages }: { packages: CreatorPackage[] }) {
 export function CreatorProfile() {
   const { id = '' } = useParams();
   const { user } = useApp();
-  const state = useApi(() => api.get<{ profile: CreatorProfileData }>(`/api/creators/${id}`).then((d) => d.profile), [id]);
+  const source = useApi(() => fetchCreatorProfile<{ profile: CreatorProfileData }>(id, `/api/creators/${id}`), [id]);
+  const state = { ...source, data: source.data?.data.profile ?? null };
+  const sampleReason = source.data?.sample ? (source.data.reason ?? 'The live Photo Shoot server did not answer') : null;
 
   if (state.loading) return <LoadingBlock label="Loading profile" />;
   if (state.error || !state.data) {
@@ -69,6 +72,13 @@ export function CreatorProfile() {
 
   return (
     <>
+      {sampleReason ? (
+        <div className="mx-auto w-full max-w-7xl px-5 pt-8 md:px-8">
+          <SampleNotice testId="sample-profile-notice">
+            {sampleReason}, so this profile is one of the example creators bundled with the site.
+          </SampleNotice>
+        </div>
+      ) : null}
       <section aria-labelledby="creator-name" className="border-b border-border">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-5 py-14 md:flex-row md:items-end md:justify-between md:px-8 md:py-20">
           <div className="flex flex-col gap-6 md:flex-row md:items-center">

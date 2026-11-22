@@ -35,7 +35,9 @@ async function request<T>(method: Method, path: string, body?: unknown): Promise
   }
   if (!response.ok) {
     throw new ApiError(
-      (data?.error as string) || `Something went wrong (${response.status}). Please try again.`,
+      (data?.error as string) || (response.status === 404
+        ? 'The Photo Shoot server did not find this request (404). Check that the server is running at this address, then try again.'
+        : `Something went wrong (${response.status}). Please try again.`),
       response.status,
       (data?.code as string) || 'ERROR',
       (data?.fieldErrors as Record<string, string>) || {},

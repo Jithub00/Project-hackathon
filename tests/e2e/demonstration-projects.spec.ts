@@ -151,6 +151,14 @@ test.describe('Join a Creative Project: demonstration briefs', () => {
     }
   });
 
+  test('the music listing gives the videographer payment terms and responsibilities', async ({ page }) => {
+    await page.goto('/opportunities/demo/independent-music-performance-video');
+    await expect(page.getByTestId('demonstration-title')).toHaveText('Independent Music Performance Video');
+    await expect(page.getByText('Payment terms', { exact: true })).toBeVisible();
+    await expect(page.getByText('Payment schedule is to be agreed before booking.')).toBeVisible();
+    await expect(page.getByText('On the day: operate cameras and lighting for the full performance and for close-ups, and record scratch audio.')).toBeVisible();
+  });
+
   test('an unknown demonstration address explains that the project is not available', async ({ page }) => {
     await page.goto('/opportunities/demo/not-a-real-project');
     await expect(page.getByTestId('demonstration-not-found')).toBeVisible();

@@ -162,6 +162,14 @@ export function DemonstrationProject() {
               <p className="text-xs uppercase tracking-[0.12em] text-muted-foreground">Total project budget</p>
               <p className="text-3xl font-black tracking-tight">{money(project.budgetCents)}, including editing</p>
               <p className="text-sm leading-relaxed text-muted-foreground">{project.compensationIncludes}</p>
+              {project.paymentTerms?.length ? (
+                <div className="flex flex-col gap-2">
+                  <p className="text-xs uppercase tracking-[0.12em] text-muted-foreground">Payment terms</p>
+                  <ul className="list-disc space-y-2 pl-5 text-sm text-muted-foreground marker:text-brand-red-text">
+                    {project.paymentTerms.map((term) => <li key={term}>{term}</li>)}
+                  </ul>
+                </div>
+              ) : null}
             </div>
             <div className="grid gap-6 md:grid-cols-2">
               {project.roles.map((role) => (

@@ -8,8 +8,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { CreatorCard } from '@/components/marketplace/CreatorCard';
 import { ANY_NEIGHBORHOOD, NeighborhoodSelect } from '@/components/marketplace/NeighborhoodSelect';
 import { EmptyState, ErrorAlert, LoadingBlock, PageHeader } from '@/components/site/ui-bits';
-import { api } from '@/lib/api';
 import { useApi } from '@/lib/use-api';
+import { fetchCreatorList } from '@/lib/creator-source';
+import { SampleNotice } from '@/components/marketplace/SampleNotice';
 import { formatUsd } from '../../shared/money';
 import { BUDGET_OPTIONS_DOLLARS, STYLE_OPTIONS } from '../../shared/constants';
 import { SERVICE_AREA_NAME } from '../../shared/service-area';
@@ -69,7 +70,7 @@ export function Discover() {
     return q.toString();
   }, [services, neighborhood, budget, styles, date, minRating, sort]);
 
-  const results = useApi(() => api.get<DiscoveryResponse>(`/api/creators${query ? `?${query}` : ''}`), [query]);
+  const results = useApi(() => fetchCreatorList<DiscoveryResponse>(`/api/creators${query ? `?${query}` : ''}`), [query]);
 
   const update = (key: string, value: string | null) => {
     const next = new URLSearchParams(params);
@@ -84,7 +85,8 @@ export function Discover() {
   };
 
   const filtersActive = query.length > 0;
-  const data = results.data;
+  const source = results.data;
+  const data = source?.data ?? null;
   const excludedReasons = data ? reasonsFor(data.excluded, params) : [];
 
   return (
@@ -211,7 +213,7 @@ export function Discover() {
         <section aria-labelledby="results-title" className="flex min-w-0 flex-col gap-8">
           <div className="flex flex-col gap-2 border-b border-border pb-6">
             <h2 id="results-title" className="text-2xl font-black uppercase tracking-tight" data-testid="results-count">
-              {data ? `${data.creators.length} Los Angeles creator${data.creators.length === 1 ? '' : 's'}` : 'Loading creators'}
+              {data ? `${data.creators.length} Los Angeles creator${data.creators.length === 1 ? '' : 's'}` : results.error ? 'Creators unavailable' : 'Loading creators'}
             </h2>
             <p className="text-sm text-muted-foreground">
               {filtersActive
@@ -220,6 +222,11 @@ export function Discover() {
             </p>
           </div>
 
+          {source?.sample ? (
+            <SampleNotice testId="sample-creators-notice">
+              {source.reason ?? 'The live Photo Shoot server did not answer'}, so these are the example creators bundled with the site. Filters need the live server.
+            </SampleNotice>
+          ) : null}
           {results.loading ? <LoadingBlock label="Matching creators" /> : null}
           {results.error ? <ErrorAlert message={results.error} onRetry={results.reload} /> : null}
 
